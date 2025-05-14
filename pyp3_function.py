@@ -1,66 +1,92 @@
 # Задача 1: Оценка по шкале
-
-def check_grade(score):
+def check_grade(score: int):
     if score >= 90:
-        return f"Оценка за {score} баллов: Отлично"
+        print(f"Оценка за {score} баллов: Отлично")
+        return score
     elif 89 >= score >= 75:
-        return f"Оценка за {score} баллов: Хорошо"
+        print(f"Оценка за {score} баллов: Хорошо")
+        return score
     elif 74 >= score >= 50:
-        return f"Оценка за {score} баллов: Удовлетворительно"
+        print(f"Оценка за {score} баллов: Удовлетворительно")
+        return score
     else:
-        return f"Оценка за {score} баллов: Неудовлетворительно"
+        print(f"Оценка за {score} баллов: Неудовлетворительно")
+        return score
 
-print(check_grade(95))
-print(check_grade(85))
-print(check_grade(65))
-print(check_grade(47))
+(check_grade(95))
+(check_grade(85))
+(check_grade(65))
+(check_grade(47))
+
 
 # # Задача 2: Чётное или нечётное число
-
-def is_even(number):
+def is_even(number: int):
     if number == 0:
-        return "Введите число отличное от 0."
-    return f"Число {number} является чётным." if number % 2 == 0 \
-        else f"Число {number} является нечётным."
+        print("Введите число отличное от 0.")
+        return number
 
-print(is_even(0))
-print(is_even(4))
-print(is_even(7))
+    if number % 2 == 0:
+        print(f"Число {number} является чётным")
+        return number
+    else:
+        print(f"Число {number} является нечётным.")
+        return number
+
+(is_even(0))
+(is_even(4))
+(is_even(7))
+
 
 # Задача 3: Максимальное из двух чисел
-def find_max(a, b):
+def find_max(a: int, b: int):
     if a == b:
-        return("Введите числа не равные друг другу")
+        print("Введите числа не равные друг другу")
+        return None
     if a > b:
-        return f"Максимальное из чисел {a} и {b}: {a}."
+        print(f"Максимальное из чисел {a} и {b}: {a}.")
+        return a
     else:
-        return f"Максимальное из чисел {a} и {b}: {b}."
+        print(f"Максимальное из чисел {a} и {b}: {b}.")
+        return b
 
-print(find_max(10, 20))
-print(find_max(15, 9))
-print(find_max(11, 11))
+(find_max(10, 20))
+(find_max(15, 9))
+(find_max(11, 11))
 
 
 # Задача 4: Проверка числа на положительность и чётность
-def check_number(number):
+def check_number(number: int):
     if number > 0:
         if number % 2 == 0:
-            return f"Число {number} положительное и чётное."
+            print(f"Число {number} положительное и чётное.")
+            return number
+        else:
+            print(f"Число {number} положительное и нечётное.")
+            return number
     elif number == 0:
-        return "Это ноль"
+        print("Это ноль")
+        return number
     else:
-        return f"Число {number} отрицательное."
+        print(f"Число {number} отрицательное.")
+        return number
 
-print(check_number(8))
-print(check_number(-5))
-print(check_number(0))
+(check_number(8))
+(check_number(-5))
+(check_number(0))
+(check_number(5))
 
 
 # Задача 5: Проверка длины строки
+def check_string_length(string: str, length: int):
+    if length > 0 and len(string) > 0:
+        if len(string) >= length:
+            print(f"Длина строки {string} достаточная")
+            return length
+        else:
+            print(f"Строка {string} слишком короткая")
+            return length
+    print("Длина строки должна быть больше 0 и строка должна быть заполнена")
+    return length
 
-def check_string_length(string, length):
-    return f"Длина строки {string} достаточная" if len(string) >= length \
-        else f"Строка {string} слишком короткая"
-
-print(check_string_length("Python", 5))
-print(check_string_length("Hi", 5))
+(check_string_length("Python", 5))
+(check_string_length("Hi", 5))
